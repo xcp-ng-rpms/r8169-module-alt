@@ -9,7 +9,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{driver_name}-module-alt
 Version: 4.19.128
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 
 # Source taken from https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/drivers/net/ethernet/realtek?h=v4.19.128
@@ -53,5 +53,8 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Wed Aug 19 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 4.19.128-2
+- Rebuild for XCP-ng 8.2
+
 * Wed Jul 01 2020 Rushikesh Jadhav <rushikesh7@gmail.com> - 4.19.128-1
 - Adding Realtek driver r8169 from kernel 4.19.128
