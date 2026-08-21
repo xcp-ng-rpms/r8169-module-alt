@@ -9,14 +9,14 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{driver_name}-module-alt
 Version: 4.19.128
-Release: 3%{?dist}
+Release: 3.0.kernelpreview.1%{?dist}
 License: GPL
 
 # Source taken from https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/drivers/net/ethernet/realtek?h=v4.19.128
 Source0: %{driver_name}-%{version}.tar.gz
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
 Requires(post): /usr/sbin/depmod
@@ -53,6 +53,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 4.19.128-3.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Fri Sep 16 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 4.19.128-3
 - Rebuild for XCP-ng 8.3
 
