@@ -9,7 +9,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{driver_name}-module-alt
 Version: 4.19.128
-Release: 3.0.kernelpreview.1%{?dist}
+Release: 3.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPL
 
 # Source taken from https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/drivers/net/ethernet/realtek?h=v4.19.128
